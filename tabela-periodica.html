@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Tabela Periódica</title>
+
+    <style>
+    @font-face{
+    font-family: fraktur shadowed;
+    src: url("/fonts/fraktur_shadowed/FrakturShadowed.ttf");
+}
+    
+    @font-face {
+    font-family: enchanted land;
+    src: url("/fonts/enchanted-land/Enchanted\ Land.otf");
+}
+
+        h1{
+            font-family: fraktur shadowed;
+            font-size: 60px;
+            text-align: center;
+            color: #FFFFF0;
+        }
+
+         body {
+            height: 100vh; /* Altura total da janela */
+            background-image: url('/3.png'); /* Caminho para a imagem */
+            background-size: cover; /* Cobre toda a área do fundo */
+            background-position: center; /* Centraliza a imagem */
+            background-repeat: no-repeat; /* Evita que a imagem se repita */
+            background-color: black;
+}
+
+        table {
+            border-collapse: collapse;
+            margin: 40px;
+            margin-left: 400px;
+            margin-bottom: 20px; 
+            
+        }
+        td, th {
+            width: 60px;
+            height: 60px;
+            text-align: center;
+            vertical-align:middle;
+            position: relative;
+            clip-path: polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0% 50%);
+            font-weight: bold;
+        }
+
+        .align-right {
+            text-align: right;
+            margin-left: 122px;
+            margin-right: 0;
+            width: fit-content;
+}
+
+
+        .bg {
+            background-color: #f0e6d6;
+        }
+        .color1 {
+            color: #c2b280; 
+            background-color: #f0e6d6;
+        }
+        .color2 {
+            color: #8c3b2a; 
+            background-color: #f0e6d6;
+        }
+        .color3 {
+            color: #556b2f;
+            background-color: #f0e6d6;
+        }   
+        .color4 {
+            color: #daa520;
+            background-color: #f0e6d6;
+        }   
+        .color5 {
+            color: #800020;
+            background-color: #f0e6d6;
+        }
+        .color6{
+            color: #0f52ba;
+            background-color: #f0e6d6;
+        }
+        .color7{
+            color: #cd7f32;
+            background-color: #f0e6d6;
+        }
+        .color8 {
+            color: #4682b4;
+            background-color: #f0e6d6;
+        }
+        .color9{
+            color: #754e64;
+            background-color: #f0e6d6;
+        }    
+
+        .symbol {
+    font-size: 16px;
+    line-height: 1;
+}
+        .symbol sub {
+    font-size: 10px;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.element {
+            cursor: pointer;
+        }
+
+        #details {
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="content">
+        <h1>Tabela Periódica</h1>
+    </div>
+
+    <table>
+        <tr>
+            <th class="bg">
+                <div class="symbol" onmouseover="showElementDetails('Hydrogen')">
+                H <sub>1</sub></div></a>
+            </th> 
+            <td></td>
+            <td></td>
+            <td></td> 
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <th class="color7" onmouseover="showElementDetails('Helium')">
+                <div class="symbol">             
+                He <sub>2</sub></div>
+            </th>
+        </tr>
+        <tr>
+            <th class="color1" onmouseover="showElementDetails('Lithium')">
+                <div class="symbol">
+                Li <sub>3</sub></div>
+            </th>
+            <td class="color2">
+                <div class="symbol" onmouseover="showElementDetails('Beryllium')">
+                Be <sub>4</sub></div>
+            </td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="color4" onmouseover="showElementDetails('Borium')">
+                <div class="symbol">
+                B <sub>5</sub></div></td>
+                <td class="bg" onmouseover="showElementDetails('Carbonium')">
+                    <div class="symbol">
+                    C <sub>6</sub></div>
+                </td>
+                <td class="bg" onmouseover="showElementDetails('Nitrogenium')">
+                    <div class="symbol">        
+                    N <sub>7</sub></div>
+                </td>
+                <td class="bg" onmouseover="showElementDetails('Oxygenium')">
+                    <div class="symbol">  
+                    O <sub>8</sub></div>
+                </td>
+                <td class="color6" onmouseover="showElementDetails('Fluorum')">
+                    <div class="symbol"> 
+                    F <sub>9</sub></div>
+                </td>
+                <th class="color7" onmouseover="showElementDetails('Neon')">
+                    <div class="symbol">     
+                    Ne <sub>10</sub></div>
+                </th>
+        </tr>
+        <tr>
+            <th class="color1" onmouseover="showElementDetails('Natrium')">
+                <div class="symbol">   
+                Na <sub>11</sub></div>
+            </th>
+            <td class="color2" onmouseover="showElementDetails('Magnesium')">
+                <div class="symbol">  
+                Mg <sub>12</sub></div>
+            </td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="color5" onmouseover="showElementDetails('Alumen')">
+                <div class="symbol">  
+                Al <sub>13</sub></div>
+            </td>
+            <td class="color4" onmouseover="showElementDetails('Silicium')">
+                <div class="symbol">  
+                Si <sub>14</sub></div>
+            </td>
+            <td class="bg" onmouseover="showElementDetails('Phosphorus')">
+                <div class="symbol"> 
+                P <sub>15</sub></div>
+            </td>
+            <td class="bg" onmouseover="showElementDetails('Sulphur')">
+                <div class="symbol"> 
+                S <sub>16</sub></div>
+            </td>
+            <td class="color6" onmouseover="showElementDetails('Clorum')">
+                <div class="symbol"> 
+                Cl <sub>17</sub></div>
+            </td>
+            <th class="color7" onmouseover="showElementDetails('Argon')">
+                <div class="symbol"> 
+                Ar <sub>18</sub></div>
+            </th>
+            </tr>
+        <tr>
+            <th class="color1" onmouseover="showElementDetails('Kalium')">
+                <div class="symbol"> 
+                K <sub>19</sub></div>
+            </th>
+            <td class="color2" onmouseover="showElementDetails('Calcium')">
+                <div class="symbol"> 
+                Ca <sub>20</sub></div>
+            </td>
+            <td class="color3" onmouseover="showElementDetails('Scandium')">
+                <div class="symbol"> 
+                Sc <sub>21</sub></div>
+            </td>
+            <td class="color3" onmouseover="showElementDetails('Titanium')">
+                <div class="symbol"> 
+                Ti <sub>22</sub></div>
+            </td>
+            <td class="color3" onmouseover="showElementDetails('Vanadium')">
+                <div class="symbol"> 
+                V <sub>23</sub></div>
+            </td>
+            <td class="color3" onmouseover="showElementDetails('Chromium')">
+                <div class="symbol"> 
+                Cr <sub>24</sub></div>
+            </td>
+            <td class="color3" onmouseover="showElementDetails('Manganum')">
+                <div class="symbol"> 
+                Mn <sub>25</sub></div>
+            </td>
+            <td class="color3" onmouseover="showElementDetails('Ferrum')">
+                <div class="symbol"> 
+                Fe <sub>26</sub></div>
+            </td>
+            <td class="color3" onmouseover="showElementDetails('Cobaltum')">
+                <div class="symbol"> 
+                Co <sub>27</sub></div>
+            </td>
+            <td class="color3" onmouseover="showElementDetails('Niccolum')">
+                <div class="symbol"> 
+                Ni <sub>28</sub></div>
+            </td>
+            <td class="color3" onmouseover="showElementDetails('Cuprum')">
+                <div class="symbol"> 
+                Cu <sub>29</sub></div>
+            </td>
+            <td class="color3" onmouseover="showElementDetails('Zincum')">
+                <div class="symbol"> 
+                Zn <sub>30</sub></div>
+            </td>
+            <td class="color5" onmouseover="showElementDetails('Galium')">
+                <div class="symbol"> 
+                Ga <sub>31</sub></div>
+            </td>
+            <td class="color4" onmouseover="showElementDetails('Germanium')">
+                <div class="symbol"> 
+                Ge <sub>32</sub></div>
+            </td>
+            <td class="color4" onmouseover="showElementDetails('Arsenicum')">
+                <div class="symbol"> 
+                As <sub>33</sub></div>
+            </td>
+            <td class="bg" onmouseover="showElementDetails('Selenium')">
+                <div class="symbol"> 
+                Se <sub>34</sub></div>
+            </td>
+            <td class="color6" onmouseover="showElementDetails('Bromum')">
+                <div class="symbol"> 
+                Br <sub>35</sub></div>
+            </td>
+            <th class="color7" onmouseover="showElementDetails('Krypton')">
+                <div class="symbol"> 
+                Kr <sub>36</sub></div>
+            </th>
+        </tr>
+        <tr>
+            <th class="color1" onmouseover="showElementDetails('Rubidium')">
+                <div class="symbol"> 
+                Rb <sub>37</sub></div>
+            </th>
+            <td class="color2" onmouseover="showElementDetails('Strontium')">
+                <div class="symbol"> 
+                Sr <sub>38</sub></div>
+            </td>
+            <td class="color3" onmouseover="showElementDetails('Yttrium')">
+                <div class="symbol"> 
+                Y <sub>39</sub></div>
+            </td>
+            <td class="color3" onmouseover="showElementDetails('Zirconium')">
+                <div class="symbol"> 
+                Zr <sub>40</sub></div>
+            </td>
+            <td class="color3" onmouseover="showElementDetails('Niobium')">
+                <div class="symbol"> 
+                Nb <sub>41</sub></div>
+            </td>
+            <td class="color3" onmouseover="showElementDetails('Molybdenum')">
+                <div class="symbol"> 
+                Mo <sub>42</sub></div>
+            </td>
+            <td class="color3" onmouseover="showElementDetails('Technetium')">
+                <div class="symbol"> 
+                Tc <sub>43</sub></div>
+            </td>
+            <td class="color3" onmouseover="showElementDetails('Ruthenium')">
+                <div class="symbol"> 
+                Ru <sub>44</sub></div>
+            </td>
+            <td class="color3" onmouseover="showElementDetails('Rhodium')">
+                <div class="symbol"> 
+                Rh <sub>45</sub></div>
+            </td>
+            <td class="color3" onmouseover="showElementDetails('Palladium')">
+                <div class="symbol"> 
+                Pd <sub>46</sub></div>
+            </td>
+            <td class="color3" onmouseover="showElementDetails('Argentum')">
+                <div class="symbol"> 
+                Ag <sub>47</sub></div>
+            </td>
+            <td class="color3" onmouseover="showElementDetails('Cadmium')">
+                <div class="symbol"> 
+                Cd <sub>48</sub></div>
+            </td>
+            <td class="color5" onmouseover="showElementDetails('Indium')">
+                <div class="symbol"> 
+                In <sub>49</sub></div>
+            </td>
+            <td class="color5" onmouseover="showElementDetails('Stannum')">
+                <div class="symbol"> 
+                Sn <sub>50</sub></div>
+            </td>
+            <td class="color4" onmouseover="showElementDetails('Stibium')">
+                <div class="symbol"> 
+                Sb <sub>51</sub></div>
+            </td>
+            <td class="color4" onmouseover="showElementDetails('Tellurium')">
+                <div class="symbol"> 
+                Te <sub>52</sub></div>
+                <td class="color6" onmouseover="showElementDetails('Iodum')">
+                    <div class="symbol"> 
+                    I <sub>53</sub></div>
+                </td>
+                <th class="color7" onmouseover="showElementDetails('Xenon')">
+                    <div class="symbol"> 
+                    Xe <sub>54</sub></div>
+                </th>
+        </tr>
+        <tr>
+            <th class="color1" onmouseover="showElementDetails('Caesium')">
+                <div class="symbol"> 
+                Cs <sub>55</sub></div>
+            </th>
+            <td class="color2" onmouseover="showElementDetails('Barium')">
+                <div class="symbol"> 
+                Ba <sub>56</sub></div>
+            </td>
+            <td class="color8" onmouseover="showElementDetails('Lanthanum')">
+                <div class="symbol"> 
+                La <sub>57</sub></div>
+            </td>
+            <td class="color3" onmouseover="showElementDetails('Hafnium')">
+                <div class="symbol"> 
+                Hf <sub>72</sub></div>
+            </td>
+            <td class="color3" onmouseover="showElementDetails('Tantalum')">
+                <div class="symbol"> 
+                Ta <sub>73</sub></div>
+            </td>
+            <td class="color3" onmouseover="showElementDetails('Wolframium')">
+                <div class="symbol"> 
+                W <sub>74</sub></div>
+            </td>
+            <td class="color3" onmouseover="showElementDetails('Rhenium')">
+                <div class="symbol"> 
+                Re <sub>75</sub></div>
+            </td>
+            <td class="color3" onmouseover="showElementDetails('Osmium')">
+                <div class="symbol"> 
+                Os <sub>76</sub></div>
+            </td>
+            <td class="color3" onmouseover="showElementDetails('Iridium')">
+                <div class="symbol"> 
+                Ir <sub>77</sub></div>
+            </td>
+            <td class="color3" onmouseover="showElementDetails('Platinum')">
+                <div class="symbol"> 
+                Pt <sub>78</sub></div>
+            </td>
+            <td class="color3" onmouseover="showElementDetails('Aurum')">
+                <div class="symbol"> 
+                Au <sub>79</sub></div>
+            </td>
+            <td class="color3" onmouseover="showElementDetails('Hydrargyrum')">
+                <div class="symbol"> 
+                Hg <sub>80</sub></div>
+            </td>
+            <td class="color5" onmouseover="showElementDetails('Thallium')">
+                <div class="symbol"> 
+                Tl <sub>81</sub></div>
+            </td>
+            <td class="color5" onmouseover="showElementDetails('Plumbum')">
+                <div class="symbol"> 
+                Pb <sub>82</sub></div>
+            </td>
+            <td class="color5" onmouseover="showElementDetails('Bismuthum')">
+                <div class="symbol"> 
+                Bi <sub>83</sub></div>
+            </td>
+            <td class="color4" onmouseover="showElementDetails('Polonium')">
+                <div class="symbol"> 
+                Po <sub>84</sub></div>
+            </td>
+            <td class="color6" onmouseover="showElementDetails('Astatum')">
+                <div class="symbol"> 
+                At <sub>85</sub></div>
+            </td>
+            <th class="color7" onmouseover="showElementDetails('Radon')">
+                <div class="symbol"> 
+                Rn <sub>86</sub></div>
+            </th>
+            </tr>
+        <tr>
+            <th class="color1" onmouseover="showElementDetails('Francium')">
+                <div class="symbol"> 
+                Fr <sub>87</sub></div>
+            </th>
+            <td class="color2" onmouseover="showElementDetails('Radium')">
+                <div class="symbol"> 
+                Ra <sub>88</sub></div>
+            </td>
+            <td class="color9" onmouseover="showElementDetails('Actinium')">
+                <div class="symbol"> 
+                Ac <sub>89</sub></div>
+            </td>
+            <td class="color3" onmouseover="showElementDetails('Rhuterfordium')">
+                <div class="symbol"> 
+                Rf <sub>104</sub></div>
+            </td>
+            <td class="color3" onmouseover="showElementDetails('Dubnium')">
+                <div class="symbol"> 
+                Db <sub>105</sub></div>
+            </td>
+            <td class="color3" onmouseover="showElementDetails('Seaborgium')">
+                <div class="symbol"> 
+                Sg <sub>106</sub></div>
+            </td>
+            <td class="color3" onmouseover="showElementDetails('Bohrium')">
+                <div class="symbol"> 
+                Bh <sub>107</sub></div>
+            </td>
+            <td class="color3" onmouseover="showElementDetails('Hassium')">
+                <div class="symbol"> 
+                Hs <sub>108</sub></div>
+            </td>
+            <td class="color3" onmouseover="showElementDetails('Meitnerium')">
+                <div class="symbol"> 
+                Mt <sub>109</sub></div>
+            </td>
+            <td class="color3" onmouseover="showElementDetails('Darmstadtium')">
+                <div class="symbol"> 
+                Ds <sub>110</sub></div>
+            </td>
+            <td class="color3" onmouseover="showElementDetails('Roentgenium')">
+                <div class="symbol"> 
+                Rg <sub>111</sub></div>
+            </td>
+            <td class="color3" onmouseover="showElementDetails('Copernicium')">
+                <div class="symbol"> 
+                Cn <sub>112</sub></div>
+            </td>
+            <td class="color5" onmouseover="showElementDetails('Nihonium')">
+                <div class="symbol"> 
+                Nh <sub>113</sub></div>
+            </td>
+            <td class="color5" onmouseover="showElementDetails('Flerovium')">
+                <div class="symbol"> 
+                Fl <sub>114</sub></div>
+            </td>
+            <td class="color5" onmouseover="showElementDetails('Moscovium')">
+                <div class="symbol"> 
+                Mc <sub>115</sub></div>
+            </td>
+            <td class="color5" onmouseover="showElementDetails('Livermorium')">
+                <div class="symbol"> 
+                Lv <sub>116</sub></div>
+            </td>
+            <td class="color6" onmouseover="showElementDetails('Tennessine')">
+                <div class="symbol"> 
+                Ts <sub>117</sub></div>
+            </td>
+            <th class="color7" onmouseover="showElementDetails('Oganesson')">
+                <div class="symbol"> 
+                Og <sub>118</sub></div>
+            </th>
+        </tr>
+    </table>
+
+    <div class="align-right">
+    <table class="baixo">
+        <tr>
+            <th class="color8" onmouseover="showElementDetails('Cerium')">
+                <div class="symbol"> 
+                Ce <sub>58</sub></div>
+            </th>
+            <td class="color8" onmouseover="showElementDetails('Praseodymium')">
+                <div class="symbol"> 
+                Pr <sub>59</sub></div></td>
+                <td class="color8" onmouseover="showElementDetails('Neodymium')">
+                    <div class="symbol"> 
+                    Nd <sub>60</sub></div>
+                </td>
+                <td class="color8" onmouseover="showElementDetails('Promethium')">
+                    <div class="symbol"> 
+                    Pm <sub>61</sub></div>
+                </td>
+                <td class="color8" onmouseover="showElementDetails('Samarium')">
+                    <div class="symbol"> 
+                    Sm <sub>62</sub></div>
+                </td>
+                <td class="color8" onmouseover="showElementDetails('Europium')">
+                    <div class="symbol"> 
+                    Eu <sub>63</sub></div>
+                </td>
+                <td class="color8" onmouseover="showElementDetails('Gadolinium')">
+                    <div class="symbol"> 
+                    Gd <sub>64</sub></div>
+                </td>
+                <td class="color8" onmouseover="showElementDetails('Terbium')">
+                    <div class="symbol"> 
+                    Tb <sub>65</sub></div>
+                </td>
+                <td class="color8" onmouseover="showElementDetails('Dysprosium')">
+                    <div class="symbol"> 
+                    Dy <sub>66</sub></div>
+                </td>
+                <td class="color8" onmouseover="showElementDetails('Holmium')">
+                    <div class="symbol"> 
+                    Ho <sub>67</sub></div>
+                </td>
+                <td class="color8" onmouseover="showElementDetails('Erbium')">
+                    <div class="symbol"> 
+                    Er <sub>68</sub></div>
+                </td>
+                <td class="color8" onmouseover="showElementDetails('Thulium')">
+                    <div class="symbol"> 
+                    Tm <sub>69</sub></div>
+                </td>
+                <td class="color8" onmouseover="showElementDetails('Ytterbium')">
+                    <div class="symbol"> 
+                    Yb <sub>70</sub></div>
+                </td>
+                <th class="color8" onmouseover="showElementDetails('Lutetium')">
+                    <div class="symbol"> 
+                    Lu <sub>71</sub></div>
+                </th>
+        </tr> 
+
+        <tr>
+            <th class="color9" onmouseover="showElementDetails('Thorium')">
+                <div class="symbol"> 
+                Th <sub>90</sub></div>
+            </td>
+            <td class="color9" onmouseover="showElementDetails('Protactinium')">
+                <div class="symbol"> 
+                Pa <sub>91</sub></div>
+            </td>
+            <td class="color9" onmouseover="showElementDetails('Uranium')">
+                <div class="symbol"> 
+                U <sub>92</sub></div>
+            </td>
+            <td class="color9" onmouseover="showElementDetails('Neptunium')">
+                <div class="symbol"> 
+                Np <sub>93</sub></div>
+            </td>
+            <td class="color9" onmouseover="showElementDetails('Plutonium')">
+                <div class="symbol"> 
+                Pu <sub>94</sub></div>
+            </td>
+            <td class="color9" onmouseover="showElementDetails('Americium')">
+                <div class="symbol"> 
+                Am <sub>95</sub></div>
+            </td>
+            <td class="color9" onmouseover="showElementDetails('Curium')">
+                <div class="symbol"> 
+                Cm <sub>96</sub></div>
+            </td>
+            <td class="color9" onmouseover="showElementDetails('Berkelium')">
+                <div class="symbol"> 
+                Bk <sub>97</sub></div>
+            </td>
+            <td class="color9" onmouseover="showElementDetails('Californium')">
+                <div class="symbol"> 
+                Cf <sub>98</sub></div>
+            </td>
+            <td class="color9" onmouseover="showElementDetails('Einsteinium')">
+                <div class="symbol"> 
+                Es <sub>99</sub></div>
+            </td>
+            <td class="color9" onmouseover="showElementDetails('Fermium')">
+                <div class="symbol"> 
+                Fm <sub>100</sub></div>
+            </td>
+            <td class="color9" onmouseover="showElementDetails('Mendelevium')">
+                <div class="symbol"> 
+                Md <sub>101</sub></div>
+            </td>
+            <td class="color9" onmouseover="showElementDetails('Nobelium')">
+                <div class="symbol"> 
+                No <sub>102</sub></div>
+            </td>
+            <th class="color9" onmouseover="showElementDetails('Lawrencium')">
+                <div class="symbol"> 
+                Lr <sub>103</sub></div>
+            </th>
+        </tr>
+    </table>
+</div>
+
+<div id="details" style="font-family: enchanted land; font-size: 60px; margin: 110px; text-align: center;"> Passe o mouse sobre um elemento para ver seu nome em <em>latim</em>.</div>
+
+<script>
+    function showElementDetails(element) {
+        document.getElementById("details").innerText = "" + element;}
+</script>
+
+</body>
+</html>
